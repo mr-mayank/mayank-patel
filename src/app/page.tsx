@@ -125,13 +125,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
     >
-      {/* 
-        Changes made: 
-        1. Removed 'w-full' and 'max-w-2xl'. Added 'w-fit'.
-        2. Removed 'justify-between'.
-        3. Added explicit horizontal padding 'px-6'.
-        4. Controls spacing strictly via 'gap'.
-      */}
+
       <div className="w-fit bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 flex items-center gap-8 shadow-2xl">
 
         <a href="#" className="font-bold text-lg text-white tracking-tighter hover:text-indigo-400 transition-colors">MP.</a>
@@ -196,8 +190,41 @@ const Navbar = () => {
 };
 
 export default function Portfolio() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Mayankkumar Patel',
+    jobTitle: 'Fullstack Developer',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Odoo'
+    },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Vishwakarma Government Engineering College'
+    },
+    url: 'https://mayankpatel.in',
+    sameAs: [
+      'https://www.linkedin.com/in/mayankkumar-d-patel/',
+      'https://github.com/mr-mayank',
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Ahmedabad',
+      addressRegion: 'Gujarat',
+      addressCountry: 'India'
+    },
+    knowsAbout: ['Next.js', 'React', 'Odoo', 'Node.js', 'JavaScript', 'TypeScript']
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-200 selection:bg-indigo-500/30 font-sans pb-10">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Navbar />
 
       <main className="max-w-5xl mx-auto px-4 pt-32 space-y-16 md:space-y-24">
