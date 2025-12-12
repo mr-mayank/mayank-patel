@@ -27,7 +27,7 @@ const LINKS = {
   linkedin: "https://www.linkedin.com/in/mayankkumar-d-patel/",
   github: "https://github.com/mr-mayank",
   email: "mrmayank6877@gmail.com",
-  resume: "/resume.pdf"
+  resume: "/Mayankkumar_Patel_Resume.pdf"
 };
 
 const TECH_STACK = {
